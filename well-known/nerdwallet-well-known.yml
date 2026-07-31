@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: probed
+source: live HTTP probes of the /.well-known/ discovery surface and developer/api subdomains
+host: https://www.nerdwallet.com
+# Empty/none is a valid, expected result: NerdWallet publishes no /.well-known/
+# API-discovery surface, no developer portal, and no public API host. Recorded
+# for auditability. No document returned 200, so no raw files were saved and no
+# WellKnown / SecurityTxt scoring pointer is wired (nothing is genuinely present).
+documents:
+- path: /.well-known/security.txt          # RFC 9116
+  status: 404
+- path: /.well-known/openid-configuration   # OIDC discovery
+  status: 404
+- path: /.well-known/api-catalog            # RFC 9727
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /llms.txt
+  status: 404
+- path: /.well-known/oauth-authorization-server  # RFC 8414
+  status: unknown                            # probe unavailable this pass
+- path: /.well-known/ai-plugin.json
+  status: unknown                            # probe unavailable this pass
+subdomains:
+- host: developer.nerdwallet.com
+  status: no-resolve                         # getaddrinfo ENOTFOUND (no DNS record)
+- host: api.nerdwallet.com
+  status: 404
+github_org:
+  url: https://github.com/nerdwallet
+  public_repos: 0                            # real org, zero public repositories (no SDKs/OpenAPI)

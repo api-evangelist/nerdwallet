@@ -1,7 +1,25 @@
 aid: nerdwallet
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/nerdwallet.png
 name: NerdWallet
-description: 'NerdWallet is a company surfaced as a portfolio company of ivp and added to the API Evangelist
-  network as a stub for enrichment. Sector: fintech. This profile is a lead awaiting the enrichment pipeline.'
+description: 'NerdWallet is a personal finance company that helps consumers make smarter money
+  decisions across credit cards, banking, investing, loans, mortgages, insurance, and taxes.
+  Through its website and mobile apps it offers comparison tools, product marketplaces, educational
+  content, and free credit-score monitoring. Founded in 2009 and headquartered in San Francisco,
+  NerdWallet is publicly traded (NASDAQ: NRDS) and was surfaced in the API Evangelist network as a
+  portfolio company of ivp. As of this enrichment pass NerdWallet publishes no public developer API,
+  developer portal, or well-known API discovery surface; this profile captures its public identity
+  and domain-security posture.'
 url: https://raw.githubusercontent.com/api-evangelist/nerdwallet/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,10 +29,15 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Fintech
+- Personal Finance
+- Consumer Finance
+- Financial Services
+- Credit Cards
+- Comparison
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,5 +45,27 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/nerdwallet-domain-security.yml
 - type: Website
   url: https://www.nerdwallet.com
+- type: Blog
+  url: https://www.nerdwallet.com/blog
+- type: Support
+  url: https://support.nerdwallet.com
+- type: TermsOfService
+  url: https://www.nerdwallet.com/p/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.nerdwallet.com/p/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/nerdwallet
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+  notes: >-
+    Re-run probe confirmed no public API surface: /.well-known/security.txt,
+    openid-configuration, api-catalog, ai-plugin.json and /llms.txt all 404;
+    developer.nerdwallet.com does not resolve; api.nerdwallet.com 404; GitHub
+    org has 0 public repos. Added well-known/ probe index (honest negative).
