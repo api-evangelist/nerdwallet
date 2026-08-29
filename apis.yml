@@ -32,6 +32,8 @@ description: 'NerdWallet is a personal finance company that helps consumers make
   developer portal, or well-known API discovery surface; this profile captures its public identity
   and domain-security posture.'
 url: https://raw.githubusercontent.com/api-evangelist/nerdwallet/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
