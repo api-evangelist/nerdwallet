@@ -48,7 +48,7 @@ tags:
 - Fintech
 - Personal Finance
 - Consumer Finance
-- Financial-Services
+- Financial Services
 - Credit Cards
 - Comparison
 tags_raw:
@@ -59,6 +59,7 @@ tags_raw:
 - Financial Services
 - Credit Cards
 - Comparison
+- Financial-Services
 apis: []
 maintainers:
 - FN: Kin Lane
